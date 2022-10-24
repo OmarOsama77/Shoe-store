@@ -14,6 +14,7 @@ import com.example.omarosama.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityMainBinding
 private lateinit var navController: NavController
 private lateinit var config : AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,7 @@ private lateinit var config : AppBarConfiguration
 //val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 //        navController = navHostFragment.findNavController()
 
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)!!
 
         val navHostFragment=supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController=navHostFragment.findNavController()
