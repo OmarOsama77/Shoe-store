@@ -28,7 +28,7 @@ class lastFragment : Fragment() {
             mutableListOf(R.drawable.shoeimg)
         )
         viewModel.shoeList.value?.add(ob)
-        Toast.makeText(activity,"Aded",Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity,"Done",Toast.LENGTH_SHORT).show()
     }
          binding.cancel.setOnClickListener {
              var actionnn = lastFragmentDirections.actionLastFragmentToScreen4Fragment()

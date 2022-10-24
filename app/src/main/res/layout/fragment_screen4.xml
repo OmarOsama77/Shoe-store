@@ -7,11 +7,6 @@
     >
 
 
-    <data>
-        <variable
-            name="fourth"
-            type="com.example.omarosama.models.Shoe" />
-    </data>
 
  <androidx.constraintlayout.widget.ConstraintLayout
      android:layout_width="match_parent"

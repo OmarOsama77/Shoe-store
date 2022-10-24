@@ -19,23 +19,17 @@ private lateinit var navController: NavController
 private lateinit var config : AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
 //val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 //        navController = navHostFragment.findNavController()
 
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)!!
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         val navHostFragment=supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController=navHostFragment.findNavController()
         setSupportActionBar(ToolBar)
         config= AppBarConfiguration.Builder(R.id.firstFragment,R.id.screen3Fragment,R.id.screen4Fragment,R.id.secondFragment).build()
         setupActionBarWithNavController(navController,config)
-
-
-
-
-
-
 
 
     }

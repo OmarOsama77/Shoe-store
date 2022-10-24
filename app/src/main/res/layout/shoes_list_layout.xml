@@ -3,9 +3,8 @@
 
 <layout>
     <data>
-
         <variable
-            name="data"
+            name="last"
             type="com.example.omarosama.models.Shoe" />
     </data>
 
@@ -24,7 +23,7 @@
         android:id="@+id/shoenameview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@={data.name}"
+        android:text="@{last.name}"
         android:layout_marginTop="5dp"
         android:textColor="@color/black" />
 
@@ -34,7 +33,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="25dp"
         android:textColor="@color/black"
-        android:text="shoe size" />
+        android:text="@{last.size}" />
 
 
     <TextView
@@ -42,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
-        android:text="shoe company"
+        android:text="@{last.company}"
         android:textColor="@color/black" />
 
     <TextView
@@ -50,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="70dp"
-        android:text="shoe description"
+        android:text="@{last.description}"
         android:textColor="@color/black" />
     <ImageView
         android:layout_width="50dp"

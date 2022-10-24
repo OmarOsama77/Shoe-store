@@ -7,12 +7,14 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.onNavDestinationSelected
 import com.example.omarosama.databinding.FragmentScreen4Binding
+import com.example.omarosama.databinding.ShoesListLayoutBinding
 import com.example.omarosama.models.Shoe
 import kotlinx.coroutines.yield
 import java.util.zip.Inflater
@@ -35,23 +37,7 @@ class Screen4Fragment : Fragment() {
 
 
         for (i in viewModel.shoeList.value?.indices!!){
-            val v:View=layoutInflater.inflate(R.layout.shoes_list_layout,null)
-
-            val name :TextView=v.findViewById(R.id.shoenameview) as TextView
-            name.text=viewModel.shoeList.value?.get(i)?.name
-
-            val size :TextView=v.findViewById(R.id.shoesizeview) as TextView
-            size.text = viewModel.shoeList.value?.get(i)?.size
-
-            val company :TextView=v.findViewById(R.id.shoeCompanyview) as TextView
-            company.text = viewModel.shoeList.value?.get(i)?.company
-
-            val description : TextView=v.findViewById(R.id.Shoedecriptionview) as TextView
-            description.text = viewModel.shoeList.value?.get(i)?.description
-
-            val img : ImageView=v.findViewById(R.id.shoeimg) as ImageView
-            img.setImageResource(R.drawable.shoeimg)
-
+            val v:View=getView(viewModel.shoeList.value!![i])
 
             binding.containerOfShoes.addView(v)
         }
@@ -71,7 +57,12 @@ class Screen4Fragment : Fragment() {
 
             })
     }
-
+    fun getView(s:Shoe):View{
+        val itemBinding = ShoesListLayoutBinding.inflate(LayoutInflater.from(requireContext()),null,false)
+        itemBinding.last = s
+        itemBinding.shoeimg.setImageResource(R.drawable.shoeimg)
+        return itemBinding.root
+    }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu, menu)
 

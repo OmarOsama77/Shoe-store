@@ -5,11 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".lastFragment"
     >
-    <data>
-        <variable
-            name="last"
-            type="com.example.omarosama.models.Shoe" />
-    </data>
+
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
