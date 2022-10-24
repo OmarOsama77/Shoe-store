@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    android:label="Home"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.omarosama.FirstFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.omarosama.SecondFragment"
+        android:label="welcome"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_secondFragment_to_screen3Fragment"
+            app:destination="@id/screen3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/screen3Fragment"
+        android:name="com.example.omarosama.Screen3Fragment"
+        android:label="welcome">
+        <action
+            android:id="@+id/action_screen3Fragment_to_screen4Fragment"
+            app:destination="@id/screen4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/screen4Fragment"
+        android:name="com.example.omarosama.Screen4Fragment"
+        android:label="shoeList">
+        <action
+            android:id="@+id/action_screen4Fragment_to_lastFragment"
+            app:destination="@id/lastFragment" />
+        <action
+            android:id="@+id/action_screen4Fragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lastFragment"
+        android:name="com.example.omarosama.lastFragment"
+        android:label="Add-item"
+        tools:layout="@layout/fragment_last">
+        <action
+            android:id="@+id/action_lastFragment_to_screen4Fragment"
+            app:destination="@id/screen4Fragment" />
+    </fragment>
+</navigation>
