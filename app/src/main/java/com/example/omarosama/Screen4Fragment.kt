@@ -21,13 +21,13 @@ import java.util.zip.Inflater
 
 class Screen4Fragment : Fragment() {
     private lateinit var binding: FragmentScreen4Binding
-    private lateinit var viewModel: viewmodel
+    private lateinit var viewModel: ShoeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel=ViewModelProvider(requireActivity())[viewmodel::class.java]
+        viewModel=ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_screen4, container, false)!!
         binding.bb.setOnClickListener {

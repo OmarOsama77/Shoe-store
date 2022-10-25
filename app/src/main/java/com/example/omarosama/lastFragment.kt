@@ -15,19 +15,21 @@ import com.example.omarosama.models.Shoe
 
 class lastFragment : Fragment() {
     private lateinit var binding: FragmentLastBinding
-    private lateinit var viewModel:viewmodel
+    private lateinit var viewModel:ShoeViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel=ViewModelProvider(requireActivity())[viewmodel::class.java]
+        viewModel=ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
         binding=DataBindingUtil.inflate(layoutInflater,R.layout.fragment_last, container, false)
-
+binding.gg=viewModel
     binding.Add.setOnClickListener {
-        var ob = Shoe(binding.shoename.text.toString(),binding.Shoesize.text.toString(),binding.Shoecompany.text.toString(),binding.shoediscription.text.toString(),
-            mutableListOf(R.drawable.shoeimg)
-        )
-        viewModel.shoeList.value?.add(ob)
+        viewModel.new.apply {
+            viewModel.showw(shoe = this)
+
+            Toast.makeText(context, "Shoe Added", Toast.LENGTH_SHORT).show()
+        }
+
         Toast.makeText(activity,"Done",Toast.LENGTH_SHORT).show()
     }
          binding.cancel.setOnClickListener {

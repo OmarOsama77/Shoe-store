@@ -6,7 +6,12 @@
     tools:context=".lastFragment"
     >
 
+ <data>
+     <variable
+         name="gg"
+         type="com.example.omarosama.ShoeViewModel" />
 
+ </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,12 +22,13 @@
     <EditText
         android:id="@+id/shoename"
         android:layout_width="wrap_content"
+        android:hint="shoe name"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=""
-        android:hint="ShoeName"
+        android:text="@{gg.new.name}"
+        android:onTextChanged="@{(text,start,before,count) -> gg.new.setName(text.toString())}"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.417"
@@ -37,7 +43,8 @@
         android:ems="10"
         android:hint="Size"
         android:inputType="numberDecimal"
-        android:text=""
+        android:text="@{gg.new.size}"
+        android:onTextChanged="@{(text,start,before,count) -> gg.new.setSize(text.toString())}"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.417"
@@ -52,7 +59,8 @@
         android:layout_marginTop="72dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=""
+        android:text="@{gg.new.company}"
+        android:onTextChanged="@{(text,start,before,count) -> gg.new.setCompany(text.toString())}"
         android:hint="Company"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +75,8 @@
         android:layout_marginTop="84dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=""
+        android:text="@{gg.new.description}"
+        android:onTextChanged="@{(text,start,before,count) -> gg.new.setDescription(text.toString())}"
         android:hint="Discription"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
